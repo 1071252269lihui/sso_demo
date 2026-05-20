@@ -1,0 +1,19 @@
+
+server:
+  port: 8090
+  servlet:
+    context-path: /${spring.application.name}
+
+spring:
+  application:
+    #服务名称
+    name: resource_server
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/authorization-server/.well-known/jwks.json
